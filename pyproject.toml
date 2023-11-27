@@ -1,0 +1,33 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "difcool"
+version = "0.1.0"
+authors = [
+  { name="Takaho A. Endo", email="takaho.endo@gmail.com"},
+]
+description = "HiC cooler calculator"
+readme = "README.md"
+licence = "MIT"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = ["numpy", "pandas", "mgzip", "h5py", "scipy"]
+
+[project.urls]
+Homepage = "https://pypi.org/project/diffcool/"
+
+[tool.hatchling.script]
+bamsalvage="diffcool:main"
+
+[project.scripts]
+bamsalvage="diffcool:main"
+
+[tool.hatch.build]
+exclude = ["*.pdf", "outputs/*", "old/*", "log.txt", "monitor/*"]
+
